@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BlackJack</title>
+	<link rel="stylesheet"  href="style.css">
+</head>
+<body>
+
+	<div id="startMenu">
+		<h1>WELCOME TO BLACKJACK!</h1>
+		<h3>By Nathan Brown</h3>
+		<br>
+		<button id="startButton">Start A New Game!</button>
+	</div>
+
+	<div id="cardTable">
+		<div id="player">
+			<h4>PLAYER</h4>
+			<div id="playerHand"></div>
+			<br>
+			<div id="playerScoreboard"></div>
+			<br>
+			<div id="playerButtons">
+				<button id="hitButton">Hit</button>
+				<button id="stayButton">Stay</button>
+			</div>
+		</div>
+	
+		<div id="dealer">
+			<h4>DEALER</h4>
+			<div id="dealerHand"></div>
+			<br>
+			<div id="dealerScoreboard"></div>
+			<br>
+		</div>
+
+		<div id="gameStatus">
+			<p id="textArea1"></p>
+			<br>
+			<button id="dealButton">Deal</button>
+			<div id="playAgain">	
+				<p id="textArea2">Play Again?</p>
+				<br>
+				<div id="playAgainButtons">
+					<button id="yesButton">Yes</button>
+					<button id="noButton">No</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+</html>
