@@ -1,9 +1,9 @@
-/*
+/*****************************************************************************
 Program: Blackjack
+Version: 1.2
+Created: 7/3/2018
  Author: Nathan Brown 
-Created: 7/1/2018
-Version: 1.0
-*/
+******************************************************************************
 
 //Program variables
 
@@ -12,9 +12,12 @@ var cardValue = ['Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten',
 	cardDeck = [],
 	playersCards = [],
 	playerScore = 0,
+	pWinsTotal = 0,
 	dealersCards = [],
 	dealerScore = 0,
-	gameOver = false;
+	dWinsTotal = 0,
+	gameOver = false,
+	playerWon = false;
 
 //HTML element variables
 
@@ -35,40 +38,43 @@ var	playerHand = document.getElementById('playerHand'),
 	yesButton = document.getElementById('yesButton'),
 	noButton = document.getElementById('noButton'),
 	dealButton = document.getElementById('dealButton'),
-	playAgainButtons = document.getElementById('playAgainButtons');
+	playAgainButtons = document.getElementById('playAgainButtons'),
+	playerWins = document.getElementById('playerWins'),
+	dealerWins = document.getElementById('dealerWins');
+
+//Starting game view
 
 cardTable.style.display = 'none';
 
+//Button functionalities
 
 startButton.addEventListener('click', function(){
+	cardDeck = newDeck();
 	startMenu.style.display = 'none';
-	cardTable.style.display = 'inline';
-	playerButtons.style.display = 'none';
-	playAgain.style.display = 'none';
+	cardTable.style.display = 'block';
+	// playerButtons.style.display = 'none';
+	// playAgain.style.display = 'none';
 	dealButton.style.display = 'inline';
+	hitButton.style.display = 'none';
+	stayButton.style.display = 'none';
+	yesButton.style.display = 'none';
+	noButton.style.display = 'none';
 });
 
 dealButton.addEventListener('click', function(){
 	playersCards = [dealCard(), dealCard()];
-	playerHand.innerText = listCards(playersCards);
-	playerScore = getScore(playersCards);
-	playerScoreboard.innerText = playerScore;
-
+	playerUpdate();
 	dealersCards = [dealCard(), dealCard()];
-	dealerHand.innerText = listCards(dealersCards);
-	dealerScore = getScore(dealersCards);
-	dealerScoreboard.innerText = dealerScore;
-
+	dealerUpdate();
 	dealButton.style.display = 'none';
-	playerButtons.style.display = 'inline';
+	// playerButtons.style.display = 'block';
+	hitButton.style.display = 'inline';
+	stayButton.style.display = 'inline';
 });
 
 hitButton.addEventListener('click', function(){
 	playersCards.push(dealCard());
-	playerHand.innerText = listCards(playersCards);
-	playerScore = getScore(playersCards);
-	playerScoreboard.innerText = playerScore;
-	endGame();
+	playerUpdate();
 	checkForWinner();
 });
 
@@ -78,31 +84,20 @@ stayButton.addEventListener('click', function(){
 });
 
 yesButton.addEventListener('click', function(){
-	playersCards = [];
-	dealersCards = [];
-	playerScore = 0;
-	dealerScore = 0;
-	gameOver = false;
-	playerHand.innerText = '';
-	playerScoreboard.innerText = '';
-	dealerHand.innerText = '';
-	dealerScoreboard.innerText = '';
-	textArea1.innerText = '';
-	playAgain.style.display = 'none';
+	reset();
+	// playAgain.style.display = 'none';
+	// textArea1.innerText = '';
+	yesButton.style.display = 'none';
+	noButton.style.display = 'none';
 	dealButton.style.display = 'inline';
 });
 
 noButton.addEventListener('click', function(){
-	playersCards = [];
-	dealersCards = [];
-	playerScore = 0;
-	dealerScore = 0;
-	gameOver = false;
-	playerHand.innerText = '';
-	playerScoreboard.innerText = '';
-	dealerHand.innerText = '';
-	dealerScoreboard.innerText = '';
-	textArea1.innerText = '';
+	reset();
+	pWinsTotal = 0;
+	dWinsTotal = 0;
+	playerWins.innerText ='Wins: ';
+	dealerWins.innerText ='Wins: ';
 	cardTable.style.display = 'none';
 	startMenu.style.display = 'inline';	
 });
@@ -243,45 +238,103 @@ function listCards(cardHand){
 }
 
 
-function endGame(){
+function playerUpdate(){
 
-	//Checks the player's score to see if they've exceeded 21
-	//If so, the game/hand is over
+	//Lists the player's cards and calculates and lists
+	//their current score
 
-	if(playerScore > 21){
-		gameOver = true;
-	}
+	playerHand.innerText = listCards(playersCards);
+	playerScore = getScore(playersCards);
+	playerScoreboard.innerText = playerScore;	
+}
+
+
+function dealerUpdate(){
+
+	//Lists the dealer's cards and calculates and lists
+	//their current score
+
+	dealerHand.innerText = listCards(dealersCards);
+	dealerScore = getScore(dealersCards);
+	dealerScoreboard.innerText = dealerScore;	
 }
 
 
 function checkForWinner(){
 
-	//If the player is done drawing cards, the dealer it dealt cards
+	//If the player is done drawing cards, the dealer is dealt cards
 	//and a winner is determined based on scores and Blackjack rules
 
+	if(playerScore > 21){
+		gameOver = true;
+	}
+
 	if(gameOver){
-		dealerScore = getScore(dealersCards);
 
 		while(dealerScore < playerScore && playerScore <= 21 && dealerScore <=21){
 			dealersCards.push(dealCard());
-			dealerHand.innerText = listCards(dealersCards);
-			dealerScore = getScore(dealersCards);
-			dealerScoreboard.innerText = dealerScore;
+			dealerUpdate();
 		}
 		if(playerScore > 21){
-			textArea1.innerText = 'DEALER WINS!';
+			playerWon = false;
 		}
 		else if(playerScore < 22 && dealerScore > 21){
-			textArea1.innerText = 'YOU WIN!';
+			playerWon = true;
 		}
 		else if(playerScore > dealerScore){
-			textArea1.innerText = 'YOU WIN!';
+			playerWon = true;
 		}
 		else{
-			textArea1.innerText = 'DEALER WINS!';
+			playerWon = false;
 		}
 
-		playerButtons.style.display = 'none';
-		playAgain.style.display = 'inline';
+		declareWinner();
+
+		// playerButtons.style.display = 'none';
+		// playAgain.style.display = 'inline';
 	}
+
+}
+
+
+function declareWinner(){
+
+	//Declares the winner of the hand based on the status of
+	//the playerWon variable, and updates the winner's win
+	//total.
+
+	if(playerWon == true){
+		textArea1.innerText = 'YOU WIN!\nPlay Again?';
+		pWinsTotal++;
+		playerWins.innerText = 'Wins: ' + pWinsTotal;
+	}
+	else if(playerWon == false){
+		textArea1.innerText = 'DEALER WINS!\nPlay Again?';
+		dWinsTotal++;
+		dealerWins.innerText = 'Wins: ' + dWinsTotal;
+	}
+	
+	hitButton.style.display = 'none';
+	stayButton.style.display = 'none';
+	yesButton.style.display = 'inline';
+	noButton.style.display = 'inline';
+
+}
+
+
+function reset(){
+
+	//Resets the completed game in order to start a new hand
+
+	playersCards = [];
+	dealersCards = [];
+	playerScore = 0;
+	dealerScore = 0;
+	gameOver = false;
+	playerWon = false;
+	playerHand.innerText = '';
+	playerScoreboard.innerText = '';
+	dealerHand.innerText = '';
+	dealerScoreboard.innerText = '';
+	textArea1.innerText = '';	
 }
