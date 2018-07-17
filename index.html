@@ -6,48 +6,44 @@
 </head>
 <body>
 
-	<div id="startMenu">
+	<section id="startMenu">
 		<h1>WELCOME TO BLACKJACK!</h1>
 		<h3>By Nathan Brown</h3>
 		<br>
 		<button id="startButton">Start A New Game!</button>
-	</div>
+	</section>
 
-	<div id="cardTable">
+	<section id="cardTable">
 		<div id="player">
-			<h4>PLAYER</h4>
-			<div id="playerHand"></div>
+			<h3>PLAYER</h3>
+			<p id="playerWins">Wins: </p>
 			<br>
+			<p id="playerHand"></p>
 			<div id="playerScoreboard"></div>
-			<br>
-			<div id="playerButtons">
-				<button id="hitButton">Hit</button>
-				<button id="stayButton">Stay</button>
-			</div>
 		</div>
 	
 		<div id="dealer">
-			<h4>DEALER</h4>
-			<div id="dealerHand"></div>
+			<h3>DEALER</h3>
+			<p id="dealerWins">Wins: </p>
 			<br>
-			<div id="dealerScoreboard"></div>
-			<br>
+			<p id="dealerHand"></p>
+			<p id="dealerScoreboard"></p>
 		</div>
 
 		<div id="gameStatus">
 			<p id="textArea1"></p>
-			<br>
-			<button id="dealButton">Deal</button>
-			<div id="playAgain">	
-				<p id="textArea2">Play Again?</p>
-				<br>
-				<div id="playAgainButtons">
-					<button id="yesButton">Yes</button>
-					<button id="noButton">No</button>
-				</div>
-			</div>
 		</div>
-	</div>
+
+		<div id="playerButtons">
+			<button id="hitButton">Hit</button>
+			<button id="stayButton">Stay</button>
+			<button id="dealButton">Deal</button>
+			<button id="yesButton">Yes</button>
+			<button id="noButton">No</button>
+		</div>
+
+
+	</section>
 
 	<script src="script.js"></script>
 </body>
