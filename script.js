@@ -1,10 +1,3 @@
-/*****************************************************************************
-Program: Blackjack
-Version: 1.2
-Created: 7/3/2018
- Author: Nathan Brown 
-*****************************************************************************/
-
 //Program variables
 
 var cardValue = ['Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Jack','Queen','King','Ace'],
