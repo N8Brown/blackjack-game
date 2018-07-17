@@ -1,1 +1,36 @@
-/* Blackjack Stylesheet */
+/************************************************************
+Blackjack Style Sheet
+************************************************************/
+
+body {
+	width: 900px;
+	margin: auto;
+	text-align: center;
+}
+
+section {
+	margin: 20px;
+}
+
+div {
+	margin: 10px;
+}
+
+#player, #dealer {
+	display: inline-block;
+	vertical-align: top;
+	width: 350px;
+	height: 350px;
+}
+
+#playerHand, #dealerHand{
+	height: 108px;
+}
+
+#gameStatus {
+	padding: 5px;
+}
+
+#playerWins, #dealerWins {
+	font-weight: bold;
+}
