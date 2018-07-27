@@ -16,10 +16,6 @@ div {
 	margin: 10px;
 }
 
-#cardTable {
-	background: #076324;
-}
-
 #player, #dealer {
 	display: inline-block;
 	vertical-align: top;
