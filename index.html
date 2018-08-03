@@ -1,50 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>BlackJack</title>
-	<link rel="stylesheet"  href="https://N8Brown1.github.io/blackjack-game/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
 </head>
 <body>
+    <div id="playersHand">
 
-	<section id="startMenu">
-		<h1>WELCOME TO BLACKJACK!</h1>
-		<h3>By Nathan Brown</h3>
-		<br>
-		<button id="startButton">Start A New Game!</button>
-	</section>
+    </div>
+    <div>
+        <div class="card spades">
+            <div class="top-suit">&spades;</div>
+            <div class="card-value">A</div>
+            <div class="bottom-suit">&spades;</div>
+        </div>
+        
+        <div class="card hearts">
+            <div class="top-suit">&spades;</div>
+            <div class="card-value">2</div>
+            <div class="bottom-suit">&spades;</div>
+        </div>
 
-	<section id="cardTable">
-		<div id="player">
-			<h3>PLAYER</h3>
-			<p id="playerWins">Wins: </p>
-			<br>
-			<p id="playerHand"></p>
-			<div id="playerScoreboard"></div>
-		</div>
-	
-		<div id="dealer">
-			<h3>DEALER</h3>
-			<p id="dealerWins">Wins: </p>
-			<br>
-			<p id="dealerHand"></p>
-			<p id="dealerScoreboard"></p>
-		</div>
-
-		<div id="gameStatus">
-			<p id="textArea1"></p>
-		</div>
-
-		<div id="playerButtons">
-			<button id="hitButton">Hit</button>
-			<button id="stayButton">Stay</button>
-			<button id="dealButton">Deal</button>
-			<button id="yesButton">Yes</button>
-			<button id="noButton">No</button>
-		</div>
-
-
-	</section>
-
-	<script src="https://N8Brown1.github.io/blackjack-game/script.js"></script>
+        <div class="card spades">
+            <div class="top-suit">&spades;</div>
+            <div class="card-value">10</div>
+            <div class="bottom-suit">&spades;</div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
 </body>
 </html>

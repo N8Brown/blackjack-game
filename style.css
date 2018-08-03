@@ -1,36 +1,33 @@
-/************************************************************
-Blackjack Style Sheet
-************************************************************/
-
-body {
-	width: 900px;
-	margin: auto;
-	text-align: center;
+.card {
+    border-radius: 5px;
+    width: 50px;
+    height: 75px;
+    margin: 10px;
 }
 
-section {
-	margin: 20px;
+.spades, .clubs {
+    border: 3px solid black;
+    color: black;
 }
 
-div {
-	margin: 10px;
+.hearts, .diamonds {
+    border: 3px solid red;
+    color: red;
 }
 
-#player, #dealer {
-	display: inline-block;
-	vertical-align: top;
-	width: 350px;
-	height: 350px;
+.card-value {
+    font-size: 24px;
+    text-align: center;
 }
 
-#playerHand, #dealerHand{
-	height: 108px;
+.top-suit {
+    font-size: 16px;
+    text-align: left;
+    padding-left: 5px;
 }
 
-#gameStatus {
-	padding: 5px;
-}
-
-#playerWins, #dealerWins {
-	font-weight: bold;
+.bottom-suit {
+    font-size: 16px;
+    text-align: right;
+    padding-right: 5px;
 }
