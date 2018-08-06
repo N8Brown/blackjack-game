@@ -1,50 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>BlackJack</title>
-	<link rel="stylesheet"  href="https://N8Brown1.github.io/blackjack-game/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
 </head>
 <body>
 
-	<section id="startMenu">
-		<h1>WELCOME TO BLACKJACK!</h1>
-		<h3>By Nathan Brown</h3>
-		<br>
-		<button id="startButton">Start A New Game!</button>
-	</section>
+    <div id="header">
+        <div id="banner">
+            <h1>WELCOME TO BLACKJACK!</h1>
+        </div>
+    </div>
 
-	<section id="cardTable">
-		<div id="player">
-			<h3>PLAYER</h3>
-			<p id="playerWins">Wins: </p>
-			<br>
-			<p id="playerHand"></p>
-			<div id="playerScoreboard"></div>
-		</div>
-	
-		<div id="dealer">
-			<h3>DEALER</h3>
-			<p id="dealerWins">Wins: </p>
-			<br>
-			<p id="dealerHand"></p>
-			<p id="dealerScoreboard"></p>
-		</div>
+    <div class="gameArea" id="gameArea">
+        <div id="dealer">
+            <h3>DEALER</h3>
+        </div>
 
-		<div id="gameStatus">
-			<p id="textArea1"></p>
-		</div>
+        <div id="dealerWins"></div>
+        <div id="dealerHand"></div>
+        <div id="dealerScoreboard"></div>
 
-		<div id="playerButtons">
-			<button id="hitButton">Hit</button>
-			<button id="stayButton">Stay</button>
-			<button id="dealButton">Deal</button>
-			<button id="yesButton">Yes</button>
-			<button id="noButton">No</button>
-		</div>
+        <div id="winsTitle">
+            <h4>WINS</h4>
+        </div>
 
+        <div id="scoreTitle">
+            <h4>SCORE</h4>
+        </div>
 
-	</section>
+        <div id="playerWins"></div>   
+        <div id="playerHand"></div>
+        <div id="playerScoreboard"></div>
 
-	<script src="https://N8Brown1.github.io/blackjack-game/script.js"></script>
+        <div id="player">
+            <h4>PLAYER</h4>
+        </div>
+    </div>
+    
+    <div id="messageBoard">
+        <p id="gameStatus"></p>
+    </div>
+
+    <div id="gameButtons">
+        <div>
+            <button class="gameButtons" id="startButton">Start A New Game!</button>
+            <button class="gameButtons" id="hitButton">Hit</button>
+			<button class="gameButtons" id="stayButton">Stay</button>
+			<button class="gameButtons" id="dealButton">Deal</button>
+			<button class="gameButtons" id="yesButton">Yes</button>
+			<button class="gameButtons" id="noButton">No</button>
+        </div>
+    </div>
+
+    <footer id="footer">
+        <h5>A Game By Nathan Brown</h5>
+    </footer>
+    
+    <script src="script.js"></script>
 </body>
 </html>

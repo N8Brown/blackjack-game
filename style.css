@@ -1,36 +1,147 @@
-/************************************************************
-Blackjack Style Sheet
-************************************************************/
+@import url('https://fonts.googleapis.com/css?family=Monoton|Roboto');
 
+html, body {
+    height: 100vh;
+    min-height: 100vh;
+    margin: 0;
+}
 body {
-	width: 900px;
-	margin: auto;
-	text-align: center;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 70% 10% 5% 5%;
+    grid-template-areas: 
+        "header"
+        "game"
+        "message"
+        "buttons"
+        "footer";
 }
 
-section {
-	margin: 20px;
+#gameArea {
+    grid-area: game;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: 
+        "dname dname dname"
+        "dwins dcards dscore"
+        "wins dcards score"
+        "wins pcards score"
+        "pwins pcards pscore"
+        "pname pname pname";
+    align-items: stretch;
 }
 
-div {
-	margin: 10px;
+#gameButtons {
+    grid-area: buttons;
 }
 
-#player, #dealer {
-	display: inline-block;
-	vertical-align: top;
-	width: 350px;
-	height: 350px;
+footer {
+    grid-area: footer;
+} 
+
+#dealer {
+    grid-area: dname;
 }
 
-#playerHand, #dealerHand{
-	height: 108px;
+#dealerWins {
+    grid-area: dwins
 }
 
-#gameStatus {
-	padding: 5px;
+#dealerHand {
+    grid-area: dcards;
 }
 
-#playerWins, #dealerWins {
-	font-weight: bold;
+#dealerScoreboard {
+    grid-area: dscore;
+}
+
+#winsTitle {
+    grid-area: wins;
+}
+
+#scoreTitle {
+    grid-area: score;
+}
+
+#winsTitle, #scoreTitle, #playerHand, #dealerHand {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#dealerScoreboard, #dealerWins, #dealer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+#player {
+    grid-area: pname;
+}
+
+#playerWins {
+    grid-area: pwins;
+}
+
+#playerHand {
+    grid-area: pcards;
+}
+
+#playerScoreboard {
+    grid-area: pscore;
+}
+
+#messageBoard {
+    grid-area: message;
+}
+
+.card {
+    display: inline-block;
+    border-radius: 5px;
+    width: 50px;
+    height: 75px;
+    margin: 10px;
+}
+
+.spades, .clubs {
+    border: 3px solid black;
+    color: black;
+}
+
+.hearts, .diamonds {
+    border: 3px solid red;
+    color: red;
+}
+
+.card-value {
+    font-size: 24px;
+    text-align: center;
+    height: 45%;
+}
+
+.top-suit {
+    font-size: 16px;
+    text-align: left;
+    padding-left: 5px;
+    height: 25%;
+}
+
+.bottom-suit {
+    font-size: 16px;
+    text-align: right;
+    padding-right: 5px;
+    height: 25%;
+}
+
+.gameButtons {
+    display: none;
+}
+
+#banner {
+    font-family: 'Monoton', cursive;
+    font-size: 20px;
 }
