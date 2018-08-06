@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Monoton|Roboto');
 
 html, body {
-    height: 100vh;
-    min-height: 100vh;
+    min-width: 320px;
     margin: 0;
 }
 body {
