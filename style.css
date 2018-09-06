@@ -121,6 +121,7 @@ footer {
     width: 2.5em;
     height: 4em;
     margin: 1px;
+    /* margin-left: -30px; */
     box-sizing: border-box;
 }
 
@@ -137,8 +138,9 @@ footer {
 .card-value {
     font-size: 1.25em;
     text-align: center;
-    align-items: center;
+    align-items:center;
     height: 50%;
+    box-sizing: border-box;
 }
 
 .top-suit {
@@ -146,7 +148,8 @@ footer {
     text-align: left;
     padding-left: .25em;
     height: 25%;
-    align-items: center;
+    align-items:center;
+    box-sizing: border-box;
 }
 
 .bottom-suit {
@@ -154,7 +157,8 @@ footer {
     text-align: right;
     padding-right: .25em;
     height: 25%;
-    align-items: center;
+    align-items:center;
+    box-sizing: content-box;
 }
 
 .gameButtons {
