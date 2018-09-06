@@ -72,9 +72,9 @@ footer {
     justify-content: center;
 }
 
-#dealerScoreboard, #dealerWins, #dealer {
+#dealerScoreboard, #dealerWins, #dealer, #playerScoreboard, #playerWins, #player {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
 }
 
