@@ -118,9 +118,10 @@ footer {
 .card {
     display: inline-block;
     border-radius: 3px;
-    width: 2.25em;
-    height: 3.5em;
+    width: 2.5em;
+    height: 4em;
     margin: 1px;
+    /* margin-left: -30px; */
 }
 
 .spades, .clubs {
@@ -136,21 +137,24 @@ footer {
 .card-value {
     font-size: 1.25em;
     text-align: center;
-    height: 45%;
+    align-items: center;
+    height: 50%;
 }
 
 .top-suit {
-    font-size: .7em;
+    font-size: .70em;
     text-align: left;
     padding-left: .25em;
     height: 25%;
+    align-items: center;
 }
 
 .bottom-suit {
-    font-size: .7em;
+    font-size: .70em;
     text-align: right;
     padding-right: .25em;
     height: 25%;
+    align-items: center;
 }
 
 .gameButtons {
