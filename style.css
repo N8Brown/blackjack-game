@@ -121,7 +121,7 @@ footer {
     width: 2.5em;
     height: 4em;
     margin: 1px;
-    /* margin-left: -30px; */
+    box-sizing: border-box;
 }
 
 .spades, .clubs {
