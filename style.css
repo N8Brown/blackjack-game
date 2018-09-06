@@ -9,7 +9,8 @@ body {
     font-family: 'Roboto', sans-serif;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 10% 70% 10% 5% 5%;
+    grid-template-rows: 150px 500px 50px 20px auto
+    ;
     grid-template-areas: 
         "header"
         "game"
@@ -21,15 +22,14 @@ body {
 #gameArea {
     grid-area: game;
     display: grid;
-    grid-template-columns: 25% 50% 25%;
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: auto 160px auto 160px auto;
     grid-template-areas: 
-        "dname dname dname"
-        "dwins dcards dscore"
-        "wins dcards score"
-        "wins pcards score"
-        "pwins pcards pscore"
-        "pname pname pname";
+        "dwins dname dscore"
+        "dcards dcards dcards"
+        "wins . score"
+        "pcards pcards pcards"
+        "pwins pname pscore";
     align-items: stretch;
 }
 
@@ -98,12 +98,18 @@ footer {
     grid-area: message;
 }
 
+#gameStatus {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
 .card {
     display: inline-block;
     border-radius: 5px;
     width: 50px;
     height: 75px;
-    margin: 10px;
+    margin: 1px;
+    /* margin-left: -30px; */
 }
 
 .spades, .clubs {
@@ -138,6 +144,11 @@ footer {
 
 .gameButtons {
     display: none;
+}
+
+h5 {
+   margin-top: 15px;
+   margin-bottom: 15px; 
 }
 
 #banner {
