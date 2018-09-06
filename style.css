@@ -21,9 +21,8 @@ body {
 }
 
 h1 {
-    font-size: 1.5em;
-    margin-top: .5em;
-    margin-bottom: .5em;
+    font-size: 25px;
+    margin-top: 15px;
 }
 
 #gameArea {
@@ -80,7 +79,7 @@ footer {
 }
 
 #winsTitle, #scoreTitle{
-    font-size: .75em;
+    font-size: 12px;
 }
 
 #dealerScoreboard, #dealerWins, #dealer, #playerScoreboard, #playerWins, #player {
@@ -110,16 +109,16 @@ footer {
 }
 
 #gameStatus {
-    margin-top: 1em;
-    margin-bottom: 1em;
-    font-size: .75em;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 12px;
 }
 
 .card {
     display: inline-block;
     border-radius: 3px;
-    width: 2.5em;
-    height: 4em;
+    width: 42px;
+    height: 70px;
     margin: 1px;
     /* margin-left: -30px; */
     box-sizing: border-box;
@@ -136,7 +135,7 @@ footer {
 }
 
 .card-value {
-    font-size: 1.25em;
+    font-size: 25px;
     text-align: center;
     align-items:center;
     height: 50%;
@@ -144,18 +143,18 @@ footer {
 }
 
 .top-suit {
-    font-size: .70em;
+    font-size: 12px;
     text-align: left;
-    padding-left: .25em;
+    padding-left: 5px;
     height: 25%;
     align-items:center;
     box-sizing: border-box;
 }
 
 .bottom-suit {
-    font-size: .70em;
+    font-size: 12px;
     text-align: right;
-    padding-right: .25em;
+    padding-right: 5px;
     height: 25%;
     align-items:center;
     box-sizing: content-box;
@@ -166,12 +165,11 @@ footer {
 }
 
 h5 {
-   font-size:.25em;
-   margin-top: 2em;
-   margin-bottom: 1em; 
+   font-size: 8px;
+   margin-top: 10px;
+   margin-bottom: 10px; 
 }
 
 #banner {
     font-family: 'Monoton', cursive;
-    font-size: 1em;
 }
